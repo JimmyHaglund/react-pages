@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { ProductList, ProductCard, ProductDetails } from './Product/index.js';
+import { ImageService, MockProductService } from './_Services';
 
 function App() {
+  const imageService = new ImageService();
+  const productService = new MockProductService();
+  let allProducts;
+  productService.getProducts((products) => allProducts = products)
+  
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <ProductList imageService = {imageService} productService = {productService} />
       </header>
     </div>
   );
 }
 
+//<ProductCard id = {1} productService = {productService} imageService = {imageService}/>
 export default App;
