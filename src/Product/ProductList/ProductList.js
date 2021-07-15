@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Card } from 'react-bootstrap';
 import { ProductCard } from '../ProductCard/ProductCard';
 
 export class ProductList extends Component {

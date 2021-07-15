@@ -3,7 +3,7 @@ export const mockProducts = [
       id: 1,
       name: "Shoe",
       price: "999.50",
-      imageUrl: "shoe.jpg",
+      imageUrl: "shoe_thumbnail.png",
       description: "It's a good shoe, ignore the reviews stating it causes cramps for normal feet it's ok. Trust us."
    },
    {

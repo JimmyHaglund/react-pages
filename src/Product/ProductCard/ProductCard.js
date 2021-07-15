@@ -27,7 +27,7 @@ export class ProductCard extends Component {
    }
 
    loadImage() {
-      if (this.state.product.imageUrl == "") return;
+      if (this.state.product.imageUrl === "") return;
       
       let imageService = this.props.imageService;
       let requestUrl = './images/' + this.state.product.imageUrl;

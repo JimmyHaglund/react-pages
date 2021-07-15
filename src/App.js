@@ -1,19 +1,21 @@
 // import logo from './logo.svg';
 import './App.css';
-import { ProductList, ProductCard, ProductDetails } from './Product/index.js';
+import { ProductList } from './Product';
 import { ImageService, MockProductService } from './_Services';
+import { Header} from './Header'; 
 
 function App() {
   const imageService = new ImageService();
   const productService = new MockProductService();
-  let allProducts;
-  productService.getProducts((products) => allProducts = products)
   
   return (
     <div className="App">
       <header className="App-header">
-        <ProductList imageService = {imageService} productService = {productService} />
+        <Header name="Web Shop"/>
       </header>
+      <div>
+        <ProductList imageService = {imageService} productService = {productService} />
+      </div>
     </div>
   );
 }
