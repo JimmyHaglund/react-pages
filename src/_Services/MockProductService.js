@@ -21,11 +21,11 @@ export class MockProductService {
       for (let n = 0; n < this.products.length; n++) {
          let product = this.products[n];
          if (product.id === id) {
-            console.log("Found product with id", id, ":", product);
+            // console.log("Found product with id", id, ":", product);
             onComplete(product);
             return;
          }
       } 
-      console.log("Could not find any product with id", id);  
+      // console.log("Could not find any product with id", id);  
    }
 }

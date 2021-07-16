@@ -2,19 +2,19 @@
 import './App.css';
 import { ProductList } from './Product';
 import { ImageService, MockProductService } from './_Services';
-import { Header} from './Header'; 
+import { Header } from './Header';
 
 function App() {
   const imageService = new ImageService();
   const productService = new MockProductService();
-  
+
   return (
     <div className="App">
       <header className="App-header">
-        <Header name="Web Shop"/>
+        <Header name="Web Shop" />
       </header>
       <div>
-        <ProductList imageService = {imageService} productService = {productService} />
+        <ProductList imageService={imageService} productService={productService} />
       </div>
     </div>
   );

@@ -24,21 +24,21 @@ export const mockProducts = [
       id: 4,
       name: "Dog",
       price: "9.90",
-      imageUrl: "dog.jpg",
+      imageUrl: "dog_thumbnail.png",
       description: "Something's wrong with this dog, you can feel it. Why else would it be so cheap?"
    },
    {
       id: 5,
       name: "Spaghetti (Damaged)",
       price: "17.50",
-      imageUrl: "spaghetti.jpg",
+      imageUrl: "spaghetti_thumbnail.png",
       description: "Got slightly nicked by the previous owner but has been tested and works just fine."
    },
    {
       id: 6,
       name: "Spaghetti",
       price: "19.90",
-      imageUrl: "spaghetti.jpg",
+      imageUrl: "spaghetti_thumbnail.png",
       description: "Delicius spaghetti. Deliciousness not included."
    },
    {
