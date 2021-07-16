@@ -7,6 +7,7 @@ export class ProductList extends Component {
       super(props);
       this.state = { products: [], displayItems: [] };
       this.expandProduct = this.expandProduct.bind(this);
+      this.minimizeProduct = this.minimizeProduct.bind(this);
    }
 
    render() {
@@ -39,17 +40,45 @@ export class ProductList extends Component {
    }
 
    expandProduct(productKey) {
+      const productService = this.props.productService;
+      const imageService = this.props.imageService;
+      const minimizeProduct = this.minimizeProduct;
+      const cartService = this.props.shoppingCartService;
       let displayItems = this.state.displayItems;
+      
       for (let n = 0; n < displayItems.length; n++) {
-         console.log(n, displayItems[n]);
          if (displayItems[n].props.id === productKey) {
-            const key = n;
             const id = displayItems[n].props.id;
             const newItem = <ProductDetails 
                id ={id}
-               key={key}
-               productService={this.productService}
-               imageService={this.imageService}
+               key={n}
+               productService={productService}
+               imageService={imageService}
+               onClick={minimizeProduct}
+               shoppingCartService={cartService}
+            />
+            displayItems.splice(n, 1, newItem);
+            break;
+         }
+      }
+      this.setState({ displayItems: displayItems });
+   }
+
+   minimizeProduct(productKey) {
+      const productService = this.props.productService;
+      const imageService = this.props.imageService;
+      const expandProduct = this.expandProduct;
+      const displayItems = this.state.displayItems;
+
+      for (let n = 0; n < displayItems.length; n++) {
+         if (displayItems[n].props.id === productKey) {
+            const id = displayItems[n].props.id;
+            const newItem = <ProductCard
+               id={id}
+               key={n}
+               productService={productService}
+               imageService={imageService}
+               onClick={expandProduct}
             />
             displayItems.splice(n, 1, newItem);
             break;

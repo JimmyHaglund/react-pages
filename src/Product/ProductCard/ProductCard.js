@@ -1,3 +1,4 @@
+import './ProductCard.css';
 import React, { Component } from 'react';
 
 export class ProductCard extends Component {
@@ -10,7 +11,6 @@ export class ProductCard extends Component {
          gridType: "m-2 col-lg-3 col-md-4 col-sm-6 col-xs-12"
       };
       this.handleClick = this.handleClick.bind(this);
-      console.log(this);
    }
    
    
@@ -29,7 +29,6 @@ export class ProductCard extends Component {
    }
 
    handleClick() {
-      console.log("Clicked on " + this.state.product.name);
       this.props.onClick(this.props.id);
    }
 
@@ -38,10 +37,10 @@ export class ProductCard extends Component {
    }
 
    loadImage() {
-      if (this.state.product.imageUrl === "") return;
+      if (this.state.product.imageThumb === "") return;
       
       let imageService = this.props.imageService;
-      let requestUrl = './images/' + this.state.product.imageUrl;
+      let requestUrl = './images/' + this.state.product.imageThumb;
 
       let me = this;
       imageService.loadImage(requestUrl, (imageAddress => 
