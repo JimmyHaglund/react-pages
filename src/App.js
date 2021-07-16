@@ -10,11 +10,11 @@ function App() {
   const shoppingCartService = new ShoppingCartService();
   return (
     <div className="App">
-      <header className="App-header">
+      <header>
         <Header name="Web Shop" 
           shoppingCartService={shoppingCartService}/>
       </header>
-      <div>
+      <div className="under">
         <ProductList 
           imageService={imageService} 
           productService={productService} 

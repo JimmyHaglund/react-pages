@@ -4,6 +4,7 @@
 }
 
 .productCard {
+   margin-top: 2vw;
    cursor: pointer;
    box-shadow: 3px 3px;
    height: 120vw;

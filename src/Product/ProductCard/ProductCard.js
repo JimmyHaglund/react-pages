@@ -8,7 +8,7 @@ export class ProductCard extends Component {
       this.state = {
          imageSource: "", 
          product: blankProduct ,
-         gridType: "m-2 col-lg-3 col-md-4 col-sm-6 col-xs-12"
+         gridType: "col-lg-3 col-md-4 col-sm-6 col-xs-12"
       };
       this.handleClick = this.handleClick.bind(this);
    }
@@ -20,11 +20,12 @@ export class ProductCard extends Component {
 
       let name = product.name;
       let price = product.price;
-      let cssClass = "productCard card " + this.state.gridType;
-      return <div key={this.state.product.id} className={cssClass} onClick = {this.handleClick}>
-         <img className="card-img-top" src = {imgSrc} alt = {name} width = '100%'></img>
-         <h4 className="card-title text-primary"><b>{name}</b></h4>
-         <p className="card-text price"><b>{price} Kr</b></p>
+      return <div key={this.state.product.id} className={this.state.gridType} >
+         <div className= "productCard card" onClick = {this.handleClick}>
+            <img className="card-img-top" src = {imgSrc} alt = {name} width = '100%'></img>
+            <h4 className="card-title text-primary"><b>{name}</b></h4>
+            <p className="card-text price"><b>{price} Kr</b></p>
+         </div>
       </div>
    }
 
